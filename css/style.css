@@ -1,0 +1,40 @@
+.test-box {
+	height: 150px;
+	background: #f3f3f3;
+	line-height: 150px;
+	text-align: center;
+}
+
+.test-box a {
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.5rem;
+	display: block;
+}
+
+.test-box a:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.correct-answer {
+	white-space: nowrap;
+}
+
+.active a.page-link.pagination-nav__a {
+    background-color: #212529;
+    border-color: #4f4f4f;
+}
+
+a.page-link.pagination-nav__a {
+    color: #1e1e1e;
+    background-color: #bababa;
+    border-color: #4f4f4f;
+}
+
+a.page-link.pagination-nav__a:hover {
+    color: #1e1e1e;
+    background-color: #353535;
+    border-color: #4f4f4f;
+}
