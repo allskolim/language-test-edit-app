@@ -183,8 +183,55 @@ $("#deletionConfirm").click(function(event) {
 	
 });
 
+$("#pagination").on("click", ".pagination-nav__a--prev", function(event) {
+
+	event.preventDefault();
+	$(".pagination-nav__a--next").parent("li").removeClass('disabled');	
+	var currPage = $(".pagination-nav__page-item.active").index();
+	currPage -= 1;
+
+	$("#pagination li").removeClass('active');
+	if (currPage === 0) { 
+		$(this).parent("li").addClass('disabled')
+		$("#page_1").addClass('active'); }
+
+	$("#page_"+currPage).addClass('active')
+	
+
+	var modifier = (currPage - 1) * 10;
+	printTable(modifier);
+
+});
+
+$("#pagination").on("click", ".pagination-nav__a--next", function(event) {
+
+	event.preventDefault();
+	$(".pagination-nav__a--prev").parent("li").removeClass('disabled');	
+
+
+	var currPage = $(".pagination-nav__page-item.active").index();
+	
+
+	$("#pagination li").removeClass('active');
+	if (currPage === $(".pageNo").length) {
+		$(this).parent("li").addClass("disabled");
+		$(".pageNo").last().addClass('active');
+	}
+	currPage += 1;
+	$("#page_"+currPage).addClass('active')
+	
+
+	var modifier = (currPage - 1) * 10;
+	printTable(modifier);
+
+});
+
 		
-$("#pagination").on("click", ".pagination-nav__a", function() {
+$("#pagination").on("click", ".pagination-nav__a", function(event) {
+
+	event.preventDefault();
+
+	$(".pagination-nav__a--prev, .pagination-nav__a--next").parent("li").removeClass('disabled');
 
 	$("#pagination li").removeClass('active');
 	$(this).parent("li").addClass('active');

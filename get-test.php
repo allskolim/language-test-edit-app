@@ -17,11 +17,11 @@ if($result->num_rows > 0):
 $pages = ceil(($result->num_rows) / 10); ?>
         <nav id="pagination-nav">
             <ul class="pagination pagination-nav">
-                <li class="page-item pagination-nav__page-item"><a class="page-link pagination-nav__a" href="#">Previous</a></li>
+                <li class="page-item pagination-nav__page-item"><a class="page-link pagination-nav__a--prev bg-info border-dark text-light">Previous</a></li>
                 <?php for ($i = 1; $i <= $pages; $i++): ?>
-                <li id="page_<?= $i ?>" class="page-item pagination-nav__page-item"><a class="page-link pagination-nav__a" data-modifier="<?=($i - 1) * 10 ?>" href="#"><?= $i ?></a></li>
+                <li id="page_<?= $i ?>" class="page-item pagination-nav__page-item pageNo"><a class="page-link pagination-nav__a" data-modifier="<?=($i - 1) * 10 ?>"><?= $i ?></a></li>
                 <?php endfor; ?>
-                <li class="page-item pagination-nav__page-item"><a class="page-link pagination-nav__a" href="#">Next</a></li>
+                <li class="page-item pagination-nav__page-item"><a class="page-link pagination-nav__a--next bg-info border-dark text-light">Next</a></li>
             </ul>
         </nav>
 <?php $result->free();
